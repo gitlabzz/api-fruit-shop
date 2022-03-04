@@ -18,7 +18,7 @@ node {
     stage("Checkout Code (${pullRequest ? 'PR-' + pullRequest : branchName})") {
         if (pullRequest) {
             try {
-                git branch: '${BRANCH_NAME}', credentialsId: '2bc605b8-3d32-4c7b-84e2-4d858bc31c46', url: 'https://github.com/gitlabzz/demo-api.git'
+                git branch: '${BRANCH_NAME}', credentialsId: '2bc605b8-3d32-4c7b-84e2-4d858bc31c46', url: 'https://github.com/gitlabzz/api-fruit-shop.git'
             }
             catch (exception) {
                 sh '''
@@ -32,7 +32,7 @@ node {
             echo "Check out from pull request '${BRANCH_NAME}' is successfully completed!"
         } else {
             echo "Checking out branch  ========================================> ${BRANCH_NAME}"
-            git branch: '${BRANCH_NAME}', credentialsId: '2bc605b8-3d32-4c7b-84e2-4d858bc31c46', url: 'https://github.com/gitlabzz/demo-api.git'
+            git branch: '${BRANCH_NAME}', credentialsId: '2bc605b8-3d32-4c7b-84e2-4d858bc31c46', url: 'https://github.com/gitlabzz/api-fruit-shop.git'
             echo "Check out from '${BRANCH_NAME}' is successfully completed!"
         }
 
