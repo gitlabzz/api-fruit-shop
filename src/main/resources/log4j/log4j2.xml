@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<Configuration>
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="%-6r %-5level %20.20C{1}| %m%n"/>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.axway.apim" level="debug" />
+		
+		<Logger name="com.consol.citrus" level="info" />
+		<Logger name="org.apache" level="info" />
+		<Logger name="org.ehcache" level="error" />
+
+		<Root level="info">
+			<AppenderRef ref="STDOUT"/>
+		</Root>
+	</Loggers>
+</Configuration>
+
